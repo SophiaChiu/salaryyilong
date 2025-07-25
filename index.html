@@ -395,69 +395,69 @@
                 <div class="form-group">
                     <div class="input-item">
                         <label>日勤薪資 (元/日)</label>
-                        <input type="number" id="dailyWage" value="1500" min="0">
+                        <input type="number" id="dailyWage" value="1500" min="0" inputmode="numeric" pattern="[0-9]*">
                     </div>
                     <div class="input-item">
                         <label>日勤天數</label>
-                        <input type="number" id="dailyDays" value="23" min="0">
+                        <input type="number" id="dailyDays" value="23" min="0" inputmode="numeric" pattern="[0-9]*">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="input-item">
                         <label>休日薪資 (元/日)</label>
-                        <input type="number" id="restDayWage" value="1000" min="0">
+                        <input type="number" id="restDayWage" value="1000" min="0" inputmode="numeric" pattern="[0-9]*">
                     </div>
                     <div class="input-item">
                         <label>休日天數</label>
-                        <input type="number" id="restDayDays" value="8" min="0">
+                        <input type="number" id="restDayDays" value="8" min="0" inputmode="numeric" pattern="[0-9]*">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="input-item">
                         <label>病假半薪 (元/日)</label>
-                        <input type="number" id="sickLeaveWage" readonly>
+                        <input type="number" id="sickLeaveWage" readonly inputmode="numeric" pattern="[0-9]*">
                         <div class="formula-hint">病假半薪 = <span class="formula-highlight">日勤薪資</span> ÷ 2</div>
                     </div>
                     <div class="input-item">
                         <label>病假天數</label>
-                        <input type="number" id="sickLeaveDays" value="0" min="0">
+                        <input type="number" id="sickLeaveDays" value="0" min="0" inputmode="numeric" pattern="[0-9]*">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="input-item">
                         <label>平日加班費 (元/時)</label>
-                        <input type="number" id="weekdayOvertimeWage" readonly>
+                        <input type="number" id="weekdayOvertimeWage" readonly inputmode="numeric" pattern="[0-9]*">
                         <div class="formula-hint">平日加班費 = (<span class="formula-highlight">日勤薪資</span> ÷ 8) × 1.34</div>
                     </div>
                     <div class="input-item">
                         <label>平日加班時數</label>
-                        <input type="number" id="weekdayOvertimeHours" value="0" min="0" step="0.5">
+                        <input type="number" id="weekdayOvertimeHours" value="0" min="0" step="0.5" inputmode="decimal" pattern="[0-9]*\.?[0-9]*">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="input-item">
                         <label>假日加班費 (元/時)</label>
-                        <input type="number" id="holidayOvertimeWage" readonly>
+                        <input type="number" id="holidayOvertimeWage" readonly inputmode="numeric" pattern="[0-9]*">
                         <div class="formula-hint">假日加班費 = (<span class="formula-highlight">日勤薪資</span> ÷ 8) × 1.67</div>
                     </div>
                     <div class="input-item">
                         <label>假日加班時數</label>
-                        <input type="number" id="holidayOvertimeHours" value="0" min="0" step="0.5">
+                        <input type="number" id="holidayOvertimeHours" value="0" min="0" step="0.5" inputmode="decimal" pattern="[0-9]*\.?[0-9]*">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="input-item">
                         <label>晚餐津貼 (元/天)</label>
-                        <input type="number" id="dinnerAllowanceRate" value="80" readonly>
+                        <input type="number" id="dinnerAllowanceRate" value="80" readonly inputmode="numeric" pattern="[0-9]*">
                     </div>
                     <div class="input-item">
                         <label>晚餐津貼天數</label>
-                        <input type="number" id="dinnerAllowanceDays" value="0" min="0">
+                        <input type="number" id="dinnerAllowanceDays" value="0" min="0" inputmode="numeric" pattern="[0-9]*">
                     </div>
                 </div>
 
@@ -473,7 +473,7 @@
                                 </svg>
                                 無做壞津貼
                             </div>
-                            <input type="number" id="noDefectAllowance" value="3000" min="0" class="allowance-input">
+                            <input type="number" id="noDefectAllowance" value="3000" min="0" class="allowance-input" inputmode="numeric" pattern="[0-9]*">
                         </div>
                     </div>
                     
@@ -486,7 +486,7 @@
                                 </svg>
                                 全勤津貼
                             </div>
-                            <input type="number" id="perfectAttendance" value="4000" min="0" class="allowance-input">
+                            <input type="number" id="perfectAttendance" value="4000" min="0" class="allowance-input" inputmode="numeric" pattern="[0-9]*">
                         </div>
                     </div>
 
@@ -501,7 +501,7 @@
                                 </svg>
                                 組長津貼
                             </div>
-                            <input type="number" id="teamLeaderAllowance" value="3000" min="0" class="allowance-input">
+                            <input type="number" id="teamLeaderAllowance" value="3000" min="0" class="allowance-input" inputmode="numeric" pattern="[0-9]*">
                         </div>
                     </div>
 
@@ -519,7 +519,7 @@
                                 </svg>
                                 表現獎金
                             </div>
-                            <input type="number" id="performanceBonus" value="2000" min="0" class="allowance-input">
+                            <input type="number" id="performanceBonus" value="2000" min="0" class="allowance-input" inputmode="numeric" pattern="[0-9]*">
                         </div>
                     </div>
 
@@ -535,7 +535,7 @@
                                 </svg>
                                 交通津貼
                             </div>
-                            <input type="number" id="transportAllowance" value="1500" min="0" class="allowance-input">
+                            <input type="number" id="transportAllowance" value="1500" min="0" class="allowance-input" inputmode="numeric" pattern="[0-9]*">
                         </div>
                     </div>
 
@@ -550,7 +550,7 @@
                                 </svg>
                                 其他加項
                             </div>
-                            <input type="number" id="otherAddition" value="" min="0" class="allowance-input" placeholder="請輸入金額">
+                            <input type="number" id="otherAddition" value="" min="0" class="allowance-input" placeholder="請輸入金額" inputmode="numeric" pattern="[0-9]*">
                         </div>
                     </div>
                 </div>
@@ -566,22 +566,22 @@
                 <div class="form-group">
                     <div class="input-item">
                         <label>勞保費 (元)</label>
-                        <input type="number" id="laborInsurance" value="833" min="0">
+                        <input type="number" id="laborInsurance" value="833" min="0" inputmode="numeric" pattern="[0-9]*">
                     </div>
                     <div class="input-item">
                         <label>健保費 (元)</label>
-                        <input type="number" id="healthInsurance" value="516" min="0">
+                        <input type="number" id="healthInsurance" value="516" min="0" inputmode="numeric" pattern="[0-9]*">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="input-item">
                         <label>伙食費 (元/天)</label>
-                        <input type="number" id="mealFeeRate" value="50" min="0">
+                        <input type="number" id="mealFeeRate" value="50" min="0" inputmode="numeric" pattern="[0-9]*">
                     </div>
                     <div class="input-item">
                         <label>伙食費天數</label>
-                        <input type="number" id="mealFeeDays" value="0" min="0">
+                        <input type="number" id="mealFeeDays" value="0" min="0" inputmode="numeric" pattern="[0-9]*">
                     </div>
                 </div>
 
@@ -597,7 +597,7 @@
                                 </svg>
                                 遲到扣款
                             </div>
-                            <input type="number" id="lateDeduction" value="" min="0" class="allowance-input" placeholder="請輸入扣款金額">
+                            <input type="number" id="lateDeduction" value="" min="0" class="allowance-input" placeholder="請輸入扣款金額" inputmode="numeric" pattern="[0-9]*">
                         </div>
                     </div>
                     
@@ -612,7 +612,7 @@
                                 </svg>
                                 其他扣除項目
                             </div>
-                            <input type="number" id="otherDeduction" value="" min="0" class="allowance-input" placeholder="請輸入扣款金額">
+                            <input type="number" id="otherDeduction" value="" min="0" class="allowance-input" placeholder="請輸入扣款金額" inputmode="numeric" pattern="[0-9]*">
                         </div>
                     </div>
                 </div>
