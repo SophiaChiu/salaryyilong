@@ -393,7 +393,7 @@
                     </div>
                     <div class="input-item">
                         <label>日勤天數</label>
-                        <input type="number" id="dailyDays" value="22" min="0">
+                        <input type="number" id="dailyDays" value="23" min="0">
                     </div>
                 </div>
 
@@ -404,7 +404,7 @@
                     </div>
                     <div class="input-item">
                         <label>休日天數</label>
-                        <input type="number" id="restDayDays" value="0" min="0">
+                        <input type="number" id="restDayDays" value="8" min="0">
                     </div>
                 </div>
 
@@ -575,7 +575,7 @@
                     </div>
                     <div class="input-item">
                         <label>伙食費天數</label>
-                        <input type="number" id="mealFeeDays" value="22" min="0">
+                        <input type="number" id="mealFeeDays" value="0" min="0">
                     </div>
                 </div>
 
@@ -830,9 +830,9 @@
         function resetForm() {
             // 重設基本數據輸入框
             document.getElementById('dailyWage').value = '1500';
-            document.getElementById('dailyDays').value = '22';
+            document.getElementById('dailyDays').value = '23';
             document.getElementById('restDayWage').value = '1000';
-            document.getElementById('restDayDays').value = '0';
+            document.getElementById('restDayDays').value = '8';
             document.getElementById('sickLeaveDays').value = '0';
             document.getElementById('weekdayOvertimeHours').value = '0';
             document.getElementById('holidayOvertimeHours').value = '0';
@@ -842,7 +842,7 @@
             document.getElementById('laborInsurance').value = '833';
             document.getElementById('healthInsurance').value = '516';
             document.getElementById('mealFeeRate').value = '50';
-            document.getElementById('mealFeeDays').value = '22';
+            document.getElementById('mealFeeDays').value = '0';
             
             // 重設津貼輸入框
             document.getElementById('noDefectAllowance').value = '3000';
