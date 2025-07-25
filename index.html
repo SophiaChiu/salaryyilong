@@ -203,12 +203,17 @@
         .checked .allowance-input {
             border-color: #e3d5ca;
             background: white;
-            color: #d5bdaf;
+            color: #8b5a3c;
             font-weight: 600;
         }
 
         .checked .allowance-title {
-            color: #d5bdaf;
+            color: #8b5a3c;
+            font-weight: 700;
+        }
+
+        .checked svg {
+            stroke: #8b5a3c;
         }
 
         .results-section {
@@ -313,13 +318,32 @@
             font-family: 'Open Sans', 'Noto Sans TC', sans-serif;
             font-weight: bold;
             cursor: pointer;
-            width: 100%;
-            margin-top: 20px;
+            flex: 1;
             transition: transform 0.2s;
         }
 
         .calculate-btn:hover {
             transform: translateY(-2px);
+        }
+
+        .reset-btn {
+            background: #e9ecef;
+            color: #6c757d;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Open Sans', 'Noto Sans TC', sans-serif;
+            font-weight: normal;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .reset-btn:hover {
+            background: #dee2e6;
+            color: #495057;
         }
 
         @media (max-width: 768px) {
@@ -586,15 +610,24 @@
                     </div>
                 </div>
 
-                <button class="calculate-btn" onclick="calculateSalary()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
-                        <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
-                        <line x1="9" x2="15" y1="9" y2="9"/>
-                        <line x1="9" x2="15" y1="13" y2="13"/>
-                        <line x1="9" x2="13" y1="17" y2="17"/>
-                    </svg>
-                    重新計算
-                </button>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button class="reset-btn" onclick="resetForm()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                            <path d="M3 3v5h5"/>
+                        </svg>
+                        重設
+                    </button>
+                    <button class="calculate-btn" onclick="calculateSalary()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                            <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
+                            <line x1="9" x2="15" y1="9" y2="9"/>
+                            <line x1="9" x2="15" y1="13" y2="13"/>
+                            <line x1="9" x2="13" y1="17" y2="17"/>
+                        </svg>
+                        重新計算
+                    </button>
+                </div>
             </div>
 
             <div class="results-section">
@@ -790,6 +823,61 @@
             // 更新詳細列表
             updateDetailList('additionDetails', additionDetails);
             updateDetailList('deductionDetails', deductionDetails);
+        }
+        
+        // 重設表單函數
+        function resetForm() {
+            // 重設基本數據輸入框
+            document.getElementById('dailyWage').value = '1500';
+            document.getElementById('dailyDays').value = '22';
+            document.getElementById('restDayWage').value = '1000';
+            document.getElementById('restDayDays').value = '0';
+            document.getElementById('sickLeaveDays').value = '0';
+            document.getElementById('weekdayOvertimeHours').value = '0';
+            document.getElementById('holidayOvertimeHours').value = '0';
+            document.getElementById('dinnerAllowanceDays').value = '0';
+            
+            // 重設保險和伙食費
+            document.getElementById('laborInsurance').value = '833';
+            document.getElementById('healthInsurance').value = '516';
+            document.getElementById('mealFeeRate').value = '50';
+            document.getElementById('mealFeeDays').value = '22';
+            
+            // 重設津貼輸入框
+            document.getElementById('noDefectAllowance').value = '3000';
+            document.getElementById('perfectAttendance').value = '4000';
+            document.getElementById('teamLeaderAllowance').value = '3000';
+            document.getElementById('performanceBonus').value = '2000';
+            document.getElementById('transportAllowance').value = '1500';
+            document.getElementById('otherAddition').value = '';
+            document.getElementById('lateDeduction').value = '';
+            document.getElementById('otherDeduction').value = '';
+            
+            // 取消所有複選框
+            const checkboxes = [
+                'noDefectAllowanceCheck',
+                'perfectAttendanceCheck',
+                'teamLeaderAllowanceCheck',
+                'performanceBonusCheck',
+                'transportAllowanceCheck',
+                'otherAdditionCheck',
+                'lateDeductionCheck',
+                'otherDeductionCheck'
+            ];
+            
+            checkboxes.forEach(checkboxId => {
+                const checkbox = document.getElementById(checkboxId);
+                checkbox.checked = false;
+                
+                // 移除 checked 樣式
+                const parentItem = checkbox.closest('.checkbox-item');
+                if (parentItem) {
+                    parentItem.classList.remove('checked');
+                }
+            });
+            
+            // 重新計算
+            calculateSalary();
         }
         
         // 更新詳細列表
